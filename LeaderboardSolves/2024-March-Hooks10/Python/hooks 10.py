@@ -16,6 +16,22 @@ numbers[13] = [[15],[7, 0],[True], [True], [], [[6, 0],[7, 1],[8, 0]]]
 
 coords = [[1, 8], [1, 4], [1, 2], [2, 6], [2, 0], [3, 4], [4, 7], [4, 1], [5, 4], [6, 8], [6, 2], [7, 6], [7, 4], [7, 0]]
 
+end_partitions = {} #used to hold the final partitions of the numbers
+end_partitions[0] = []
+end_partitions[1] = []
+end_partitions[2] = []
+end_partitions[3] = []
+end_partitions[4] = []
+end_partitions[5] = []
+end_partitions[6] = []
+end_partitions[7] = []
+end_partitions[8] = []
+end_partitions[9] = []
+end_partitions[10] = []
+end_partitions[11] = []
+end_partitions[12] = []
+end_partitions[13] = []
+
 #base 4 counting system to keep track of each hooks rotation
 def base_10_to_4(denary):
     base_four = ""
@@ -199,21 +215,6 @@ def Break():
             return True     
     return False
 
-end_partitions = {} #used to hold the final partitions of the numbers
-end_partitions[0] = []
-end_partitions[1] = []
-end_partitions[2] = []
-end_partitions[3] = []
-end_partitions[4] = []
-end_partitions[5] = []
-end_partitions[6] = []
-end_partitions[7] = []
-end_partitions[8] = []
-end_partitions[9] = []
-end_partitions[10] = []
-end_partitions[11] = []
-end_partitions[12] = []
-end_partitions[13] = []
 
 class hooks():
     def __init__(self, current_grid) -> None:
