@@ -7,6 +7,7 @@
 #include <array>
 #include <algorithm>
 using namespace std;
+#include <chrono>
 
 class Hook {
 public:
@@ -211,6 +212,7 @@ void next_corner(int hook, std::vector<Hook>& list){
 }
 
 int main() {
+    auto begin = std::chrono::steady_clock::now();
     std::vector<int> v = {1,2,3,4,5,6,7,8,9};
     std::vector<Hook> hooks;
 
@@ -252,6 +254,16 @@ int main() {
                 cout << "Hook " << (9 - i) << ": value = " << hooks[i].current_value 
                      << ", rotation = " << hooks[i].rotation << "\n";
             }
+            auto end = std::chrono::steady_clock::now();
+
+            // Calculate elapsed time
+            auto elapsed_us = std::chrono::duration_cast<std::chrono::microseconds>(end - begin);
+            auto elapsed_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
+            auto elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
+
+            std::cout << "Elapsed: " << elapsed_ms.count() << " ms\n";
+            std::cout << "Elapsed: " << elapsed_us.count() << " us\n";
+            std::cout << "Elapsed: " << elapsed_ns.count() << " ns\n";
             return 0;
             
         } while (std::next_permutation(v.begin(), v.end()));
